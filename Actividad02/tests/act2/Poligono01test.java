@@ -8,7 +8,7 @@ public class Poligono01test {
 	Punto[] triangulo;
 	Punto[] cuadrado;
 	Punto[] poli5puntos;
-	Poligono01 cuatroPuntos, cincoPuntos;
+	PoligonoArray cuatroPuntos, cincoPuntos;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -36,8 +36,8 @@ public class Poligono01test {
 		poli5puntos[3] = cinco;
 		poli5puntos[4] = cuatro;
 		
-		cuatroPuntos = new Poligono01(cuadrado);
-		cincoPuntos = new Poligono01(poli5puntos);
+		cuatroPuntos = new PoligonoArray(cuadrado);
+		cincoPuntos = new PoligonoArray(poli5puntos);
 	}
 	@Test
 	public void testNumeroDeVertices(){
@@ -49,14 +49,14 @@ public class Poligono01test {
 	
 	@Test
 	public void testEsPoligono() {
-		assertEquals("ES POLIGONO", Poligono01.seraPoligono(cuadrado));
-		assertNotEquals("No tiene más de 3 vertices, por lo que NO ES POLIGONO", Poligono01.seraPoligono(triangulo));
-		assertEquals("ES POLIGONO", Poligono01.seraPoligono(poli5puntos));
+		assertEquals("ES POLIGONO", PoligonoArray.seraPoligono(cuadrado));
+		assertNotEquals("No tiene más de 3 vertices, por lo que NO ES POLIGONO", PoligonoArray.seraPoligono(triangulo));
+		assertEquals("ES POLIGONO", PoligonoArray.seraPoligono(poli5puntos));
 	}
 	
 	@Test
 	public void testConcavo() {
-		assertFalse(Poligono01.esConcavo(cuadrado));
-		assertTrue(Poligono01.esConcavo(poli5puntos));
+		assertFalse(PoligonoArray.esConcavo(cuadrado));
+		assertTrue(PoligonoArray.esConcavo(poli5puntos));
 	}
 }

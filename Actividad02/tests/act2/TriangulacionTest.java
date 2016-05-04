@@ -23,7 +23,7 @@ public class TriangulacionTest {
 
 	@Test
 	public void test() {
-		Poligono p = new Poligono();
+		PoligonoDobleColaEnlazada p = new PoligonoDobleColaEnlazada();
 		Punto p1 = new Punto(1, 1);
 		Punto p2 = new Punto(2, 1);
 		Punto p3 = new Punto(2, 2);

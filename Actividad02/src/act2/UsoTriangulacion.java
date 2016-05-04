@@ -37,16 +37,16 @@ public class UsoTriangulacion {
 			Punto nuevo = new Punto(abcisa, ordenada);
 			vertices[i] = nuevo;
 		}
-		Poligono01 nuevo = new Poligono01(vertices);
+		PoligonoArray nuevo = new PoligonoArray(vertices);
 		System.out.println(nuevo.toString()+"\n");
 
 		
 		// Inicio del proceso de triangulacion
-		if (Poligono01.esPoligono(vertices)) {
+		if (PoligonoArray.esPoligono(vertices)) {
 			
 			// Ejercicio nº1
 			//---------------
-			if (Poligono01.esConcavo(vertices)){
+			if (PoligonoArray.esConcavo(vertices)){
 				System.out.println("***********************************************\n"+
 								   "***		POLIGONO CONCAVO  	    ***\n"+
 								   "***********************************************");
@@ -60,19 +60,19 @@ public class UsoTriangulacion {
 			// Salida por pantalla de los angulos de los segmentos que forman el
 			// poligono
 			//System.out.println(Poligono01.angulosPoligonoToString(vertices));
-			LinkedList<Punto>cortes = Poligono01.seIntersectanAristas(vertices);
+			LinkedList<Punto>cortes = PoligonoArray.seIntersectanAristas(vertices);
 			System.out.println("\nAristas Secantes: " + cortes.size()+"\n");
 			if(cortes.size()==0){
 				
 				// Ejercicio nº3
 				//---------------
 				System.out.println("***********************************************************\n"+
-						   "***	CENTROIDE DEL POLIGONO	"+Poligono01.centroidePoligono(vertices)+"	***\n"+
+						   "***	CENTROIDE DEL POLIGONO	"+PoligonoArray.centroidePoligono(vertices)+"	***\n"+
 						   "***********************************************************\n");				
 				// Salida por pantalla de la solucion de la triangulacion del poligono
-				System.out.println(Poligono01.noSeIntersectan());
+				System.out.println(PoligonoArray.noSeIntersectan());
 				// Salida por pantalla del area del poligono
-				System.out.println(Poligono01.areaPoligonoToString(vertices));
+				System.out.println(PoligonoArray.areaPoligonoToString(vertices));
 				salida = Triangulo.triangulacionPoligono(vertices);
 				System.out.println(Triangulo.arrayTriangulosToString(salida));
 				

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import act2.Poligono;
+import act2.PoligonoDobleColaEnlazada;
 import act2.PoligonoDibujable;
 import act2.Punto;
 import act2.Recta;
@@ -129,7 +129,7 @@ public class PoligonoController {
 			Punto p = new Punto(x, y);
 			this.poligono.addVertice(p);
 			this.poligonoArray = poligono.toArray();
-			if (Poligono.esPoligono(this.poligonoArray))
+			if (PoligonoDobleColaEnlazada.esPoligono(this.poligonoArray))
 				this.operaciones();
 			else {
 				gc.clearRect(0, 0, poligonoCanvas.getWidth(), poligonoCanvas.getHeight());
@@ -154,11 +154,11 @@ public class PoligonoController {
 		drawTriangulos(triangulos);
 		poligono.draw(gc);
 		poligonoArray = poligono.toArray();
-		if (Poligono.esConcavo(poligonoArray))
+		if (PoligonoDobleColaEnlazada.esConcavo(poligonoArray))
 			concavoInput.setText("Polígono concavo");
 		else
 			concavoInput.setText("Polígono convexo");
-		Punto centroide = Poligono.centroidePoligono(poligonoArray);
+		Punto centroide = PoligonoDobleColaEnlazada.centroidePoligono(poligonoArray);
 		centroideInput.setText("Centroide en " + centroide.toString());
 		gc.setStroke(Color.BLUE);
 		gc.setFill(Color.BLUE);

@@ -4,7 +4,7 @@ import java.util.ListIterator;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class PoligonoDibujable extends Poligono{
+public class PoligonoDibujable extends PoligonoDobleColaEnlazada{
 	public PoligonoDibujable(){
 		super();
 	}

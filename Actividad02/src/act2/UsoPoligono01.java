@@ -29,21 +29,21 @@ public class UsoPoligono01 {
 			Punto nuevo = new Punto(abcisa, ordenada);
 			vertices[i] = nuevo;
 		}
-		Poligono01 poligono = new Poligono01(vertices);
+		PoligonoArray poligono = new PoligonoArray(vertices);
 
 		// Soluciones
 
 		// (ES POlIGONO)
-		if (Poligono01.esPoligono(vertices)) {
+		if (PoligonoArray.esPoligono(vertices)) {
 			// (AREA)
 			System.out.println("El area del poligono es: ");
-			System.out.println(Poligono01.areaPoligono(vertices));
+			System.out.println(PoligonoArray.areaPoligono(vertices));
 			// (CENTROIDE)
 			System.out.println("El centroide del poligono es el punto: ");
-			System.out.println(Poligono01.centroidePoligono(vertices));
+			System.out.println(PoligonoArray.centroidePoligono(vertices));
 			// (CONCAVIDAD)
 			System.out.println("¿Es Concavo el poligono?");
-			System.out.println(Poligono01.esConcavo(vertices));
+			System.out.println(PoligonoArray.esConcavo(vertices));
 			// (PUNTOS DEL POLIGONO)
 			System.out.println(poligono);
 
@@ -56,7 +56,7 @@ public class UsoPoligono01 {
 			marco.setSize(400, 400); // establece el tamaño del marco
 			marco.setVisible(true); // muestra el marco
 		} else {
-			System.out.println(Poligono01.seraPoligono(vertices));
+			System.out.println(PoligonoArray.seraPoligono(vertices));
 		}
 	}
 

@@ -1,4 +1,5 @@
 package act2;
+
 /**
  * @author frasco2001
  *
@@ -13,11 +14,11 @@ public class Punto {
 	 * @param y
 	 */
 	public Punto(double x, double y) {
-		if (x==-0.0){
-			x=0.0;
+		if (x == -0.0) {
+			x = 0.0;
 		}
-		if (y==-0.0){
-			y=0.0;
+		if (y == -0.0) {
+			y = 0.0;
 		}
 		this.x = x;
 		this.y = y;
@@ -62,11 +63,26 @@ public class Punto {
 	public String toString() {
 		return "Punto [x=" + x + ", y=" + y + "]";
 	}
-	
+
 	@Override
-	public boolean equals(Object o){
-		Punto p = (Punto)o;
-		if(p.getX() == this.x && p.getY() == this.y) return true;
+	public boolean equals(Object o) {
+		Punto p = (Punto) o;
+		if (p.getX() == this.x && p.getY() == this.y)
+			return true;
 		return false;
+	}
+
+	public double minimoX(double minX) {
+		if (this.getX() < minX) {
+			return this.getX();
+		}
+		return minX;
+	}
+
+	public double minimoY(double minY) {
+		if (this.getY() < minY) {
+			return this.getY();
+		}
+		return minY;
 	}
 }

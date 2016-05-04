@@ -59,7 +59,7 @@ public class Poligono {
 			}
 		}
 		if (contador < 4) {
-			salida = "No tiene más de 3 vertices, por lo que NO ES POLIGONO.\n";
+			salida = "No tiene mas de 3 vertices, por lo que NO ES POLIGONO.\n";
 		}
 		if (contador != z.length) {
 			salida += flagNoVertices;

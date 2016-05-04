@@ -26,12 +26,8 @@ public class PoligonosJPanel extends JPanel {
 		System.out.println(minX+" "+minY);
 		for (int i = 0; i < vertices.length; i++) {
 			Punto a = vertices[i];
-			if(a.getX()<minX){
-				minX=a.getX();
-			}
-			if(a.getY()<minY){
-				minY=a.getY();
-			}
+			minX = a.minimoX(minX);
+			minY = a.minimoY(minY);
 		}
 			if (minX<0){
 				minX=-minX;

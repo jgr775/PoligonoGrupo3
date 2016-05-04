@@ -10,7 +10,7 @@ import utils.DoublyLinkedList;
 public class Poligono {
 
 	private static final int MAX = 100;
-	private DoublyLinkedList<Punto> vertices;
+	protected DoublyLinkedList<Punto> vertices;
 
 	public Poligono(DoublyLinkedList<Punto> vertices) {
 		this.vertices = vertices;
@@ -376,22 +376,6 @@ public class Poligono {
 		for (Punto punto : poligono) {
 			this.vertices.add(punto);
 		}
-	}
-
-	public void draw(GraphicsContext gc) {
-
-		ListIterator<Punto> it = this.vertices.iterator();
-		Punto primero = it.next();
-		Punto anterior = primero;
-		Punto actual;
-		while (it.hasNext()) {
-			actual = it.next();
-			gc.strokeLine(anterior.getX() * 50 + 320, anterior.getY() * 50 + 235, actual.getX() * 50 + 320,
-					actual.getY() * 50 + 235);
-			anterior = actual;
-		}
-		gc.strokeLine(anterior.getX() * 50 + 320, anterior.getY() * 50 + 235, primero.getX() * 50 + 320,
-				primero.getY() * 50 + 235);
 	}
 
 }

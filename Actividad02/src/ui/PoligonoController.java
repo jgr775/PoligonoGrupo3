@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 import act2.Poligono;
+import act2.PoligonoDibujable;
 import act2.Punto;
 import act2.Recta;
 import act2.Triangulo;
@@ -20,7 +21,7 @@ import javafx.scene.text.Text;
 
 public class PoligonoController {
 
-	private Poligono poligono;
+	private PoligonoDibujable poligono;
 	private Punto[] poligonoArray;
 	private GraphicsContext gc;
 	private Recta linea1;
@@ -101,7 +102,7 @@ public class PoligonoController {
 	private Text pCorte;
 
 	public void initialize() {
-		this.poligono = new Poligono();
+		this.poligono = new PoligonoDibujable();
 		this.gc = poligonoCanvas.getGraphicsContext2D();
 		this.gc.fill();
 
@@ -141,7 +142,7 @@ public class PoligonoController {
 
 	@FXML
 	private void clearPoligono() throws IOException {
-		this.poligono = new Poligono();
+		this.poligono = new PoligonoDibujable();
 		gc.clearRect(0, 0, poligonoCanvas.getWidth(), poligonoCanvas.getHeight());
 		concavoInput.setText("");
 		centroideInput.setText("");
